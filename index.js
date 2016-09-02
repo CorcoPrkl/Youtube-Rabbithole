@@ -7,6 +7,9 @@ var ipc = require('electron').ipcMain;
 function getNextVideo(event, id) {
 
 if (id == null) { var videoURL = "ouZQ7rgAq-I"; } else { var videoURL = id; }
+
+
+
 if (videoURL.length != 11) { return null; } else {
               
         request.get('https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId='+videoURL+'&type=video&key='+apiKey, function(header, body, err) {
